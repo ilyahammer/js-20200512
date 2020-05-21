@@ -5,11 +5,4 @@
  */
 export function sum (n) {
 
-  function nextIteration(b) {
-    n += b;
-    return nextIteration;
-  };
-
-  nextIteration.toString = () => n || 0;
-  return nextIteration;
 }
