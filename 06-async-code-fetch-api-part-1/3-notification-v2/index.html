@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="UTF-8">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<button id="btn">Show simple message!</button>
+
+<script type="module">
+  import NotificationManager from './index.js';
+
+  const notificationManager = new NotificationManager({stackLimit: 5});
+
+  let counter = 0;
+
+  btn.addEventListener('click', () => {
+    notificationManager.showMessage(counter + ' ' + generateRandomWord(), {
+      duration: generateRandomNumber(1000, 4000),
+      type: generateRandomWord(['success', 'error', 'warning'])
+    });
+    ++counter;
+  });
+
+  function generateRandomNumber (start, end) {
+    return start + Math.random() * end;
+  }
+
+  function generateRandomWord (data) {
+    const words = data || ['apple', 'banana', 'orange', 'tomato', 'grape'];
+
+    return words[Math.round(generateRandomNumber(0, 4))];
+  }
+</script>
