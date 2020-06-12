@@ -1,6 +1,6 @@
-// import ColumnChart from './index.js';
+import ColumnChart from './index.js';
 // TODO: remove
-import ColumnChart from '../solution';
+//import ColumnChart from '../solution';
 
 import ordersData from "./__mocks__/orders-data.js";
 

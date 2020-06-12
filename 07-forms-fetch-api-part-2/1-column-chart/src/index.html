@@ -17,10 +17,10 @@
     </div>
 
     <script type="module">
-      // import ColumnChart from './index.js';
+       import ColumnChart from './index.js';
       // TODO: remove
       // import tooltip from "../../../06-events-practice/2-tooltip/solution";
-      import ColumnChart from '../solution/index.js';
+      //import ColumnChart from '../solution/index.js';
 
       // tooltip.initialize();
 
@@ -32,10 +32,6 @@
         },
         label: 'orders',
         link: '#'
-      });
-
-      loadOrders.addEventListener('click', event => {
-        ordersChart.update(new Date('2020-03-06'), new Date('2020-05-06'))
       });
 
       const salesChart = new ColumnChart({
@@ -60,6 +56,10 @@
       orders.append(ordersChart.element);
       sales.append(salesChart.element);
       customers.append(customersChart.element);
+
+      loadOrders.addEventListener('click', event => {
+        ordersChart.update(new Date('2020-03-06'), new Date('2020-05-06'))
+      });
     </script>
   </body>
 </html>
